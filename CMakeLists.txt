@@ -61,21 +61,18 @@ endif()
 
 
 set(INCLUDE_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/include)
-set(SOURCE_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 # Library
-set(HEADERS
+set(SOURCES
     ${INCLUDE_PREFIX}/rtwtypes.h
     ${INCLUDE_PREFIX}/solver_zc.h
     ${INCLUDE_PREFIX}/ventilation_embedded.h
     ${INCLUDE_PREFIX}/zero_crossing_types.h
+    ${SOURCE_PREFIX}/ventilation_embedded.cpp
+    ${SOURCE_PREFIX}/ventilation_embedded_data.cpp    
 )
 
-set(SOURCES 
-    ${SOURCE_PREFIX}/ventilation_embedded.cpp
-    ${SOURCE_PREFIX}/ventilation_embedded_data.cpp
-)
-add_library(${TARGET} STATIC ${HEADERS} ${SOURCES})
+add_library(${TARGET} STATIC ${SOURCES})
 # target_include_directories(${TARGET} STATIC ${HEADERS})
 # clang_format(${TARGET} ${HEADERS})
 # clang_format(${TARGET} ${SOURCES})
