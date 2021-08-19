@@ -1,14 +1,8 @@
-
 cmake_minimum_required(VERSION 3.10)
 project(optima-poultry-climate-control CXX)
 
 set(CMAKE_COLOR_MAKEFILE ON)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
-
-# Build options
-option(ENABLE_DOCS             "Enable documentation target"                OFF)
-option(ENABLE_CODE_COVERAGE    "Enable code coverage generation"            OFF)
-option(ENABLE_CODE_ANALYSIS    "Enable static code analysis"                OFF)
 
 # CXX compilation options
 set(CMAKE_CXX_STANDARD 17)
@@ -69,8 +63,8 @@ set(SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/solver_zc.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/zero_crossing_types.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ventilation_embedded.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ventilation_embedded_data.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ventilation_embedded.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ventilation_embedded_data.cpp
 )
 add_library(optima-poultry-climate-control INTERFACE)
 target_include_directories(optima-poultry-climate-control INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -81,5 +75,4 @@ include(GNUInstallDirs)
 install(DIRECTORY include/
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
     FILES_MATCHING PATTERN "*.h"
-    # FILES_MATCHING PATTERN "*.c"
 )
