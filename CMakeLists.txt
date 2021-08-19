@@ -67,7 +67,7 @@ set(SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ventilation_embedded_data.cpp
 )
 add_library(optima-poultry-climate-control INTERFACE)
-target_include_directories(optima-poultry-climate-control INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_include_directories(optima-poultry-climate-control INTERFACE ${SOURCES})
 clang_format(optima-poultry-climate-control ${SOURCES})
 
 # Configure install targets
@@ -79,4 +79,8 @@ install(DIRECTORY include/
 install(DIRECTORY src/
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
     FILES_MATCHING PATTERN "*.cpp"
+)
+install(DIRECTORY lib/
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    FILES_MATCHING PATTERN "*.a"
 )
