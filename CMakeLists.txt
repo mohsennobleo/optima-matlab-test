@@ -76,7 +76,7 @@ set(SOURCES
 )
 add_library(optima-poultry-climate-control INTERFACE)
 target_include_directories(optima-poultry-climate-control INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/src)
-clang_format(optima-poultry-climate-control ${SOURCES})
+clang-format(optima-poultry-climate-control ${SOURCES})
 
 # Configure install targets
 include(GNUInstallDirs)
