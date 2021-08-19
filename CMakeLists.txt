@@ -68,8 +68,8 @@ set(SOURCES
     ${INCLUDE_PREFIX}/solver_zc.h
     ${INCLUDE_PREFIX}/ventilation_embedded.h
     ${INCLUDE_PREFIX}/zero_crossing_types.h
-    ${SOURCE_PREFIX}/ventilation_embedded.cpp
-    ${SOURCE_PREFIX}/ventilation_embedded_data.cpp    
+    ${INCLUDE_PREFIX}/ventilation_embedded.cpp
+    ${INCLUDE_PREFIX}/ventilation_embedded_data.cpp    
 )
 
 add_library(${TARGET} STATIC ${SOURCES})
