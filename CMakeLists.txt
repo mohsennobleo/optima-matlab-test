@@ -78,11 +78,11 @@ add_library(${TARGET} STATIC ${SOURCES})
 # clang_format(${TARGET} ${SOURCES})
 
 # Configure install targets
-include(GNUInstallDirs)
-install(DIRECTORY include/
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-    FILES_MATCHING PATTERN "*.h"
-)
+# include(GNUInstallDirs)
+# install(DIRECTORY include/
+#     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+#     FILES_MATCHING PATTERN "*.h"
+# )
 # install(DIRECTORY src/
 #     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 #     FILES_MATCHING PATTERN "*.cpp"
@@ -91,7 +91,7 @@ install(DIRECTORY include/
 #     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 #     FILES_MATCHING PATTERN "*.a"
 # )
-install(FILES ${HEADERS} DESTINATION include/${TARGET})
+install(FILES ${SOURCES} DESTINATION include/${TARGET})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib${TARGET}.a DESTINATION lib)
 
 
