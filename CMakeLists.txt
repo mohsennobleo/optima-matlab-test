@@ -72,7 +72,7 @@ set(SOURCES
     ${INCLUDE_PREFIX}/ventilation_embedded_data.cpp    
 )
 
-add_library(${TARGET} STATIC ${SOURCES})
+add_library(${TARGET} INTERFACE ${SOURCES})
 # target_include_directories(${TARGET} STATIC ${HEADERS})
 # clang_format(${TARGET} ${HEADERS})
 # clang_format(${TARGET} ${SOURCES})
@@ -92,7 +92,7 @@ add_library(${TARGET} STATIC ${SOURCES})
 #     FILES_MATCHING PATTERN "*.a"
 # )
 install(FILES ${SOURCES} DESTINATION include/${TARGET})
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib${TARGET}.a DESTINATION lib)
+# install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib${TARGET}.a DESTINATION lib)
 
 
 # cmake_minimum_required(VERSION 3.10)
