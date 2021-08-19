@@ -89,7 +89,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(optima-poultry-climate-control)
 
-set(TARGET optima-poultry-climate-control)
+set(TARGET climate)
 
 set(SOURCE_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/include)
