@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(optima-poultry-climate-control CXX)
-set(TARGET _climate)
+set(TARGET climate_control)
 
 set(CMAKE_COLOR_MAKEFILE ON)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
@@ -91,6 +91,7 @@ install(DIRECTORY include/
 #     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 #     FILES_MATCHING PATTERN "*.a"
 # )
+install(FILES ${HEADERS} DESTINATION include/${TARGET})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib${TARGET}.a DESTINATION lib)
 
 
