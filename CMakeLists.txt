@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(optima-poultry-climate-control CXX)
-set(APP_LIBRARY optima-poultry-climate-control-lib)
+set(APP_LIBRARY optima-poultry-climate-control)
 
 set(CMAKE_COLOR_MAKEFILE ON)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
