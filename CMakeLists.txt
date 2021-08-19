@@ -71,9 +71,9 @@ set(SOURCES ${SOURCE_PREFIX}/
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ventilation_embedded_data.cpp
 )
 add_library(${TARGET} STATIC ${HEADERS} ${SOURCES})
-target_include_directories(${TARGET} STATIC ${HEADERS})
-clang_format(${TARGET} ${HEADERS})
-clang_format(${TARGET} ${SOURCES})
+# target_include_directories(${TARGET} STATIC ${HEADERS})
+# clang_format(${TARGET} ${HEADERS})
+# clang_format(${TARGET} ${SOURCES})
 
 # Configure install targets
 include(GNUInstallDirs)
