@@ -71,12 +71,12 @@ set(SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/solver_zc.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/zero_crossing_types.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ventilation_embedded.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ventilation_embedded_data.h
+    # ${CMAKE_CURRENT_SOURCE_DIR}/src/ventilation_embedded.h
+    # ${CMAKE_CURRENT_SOURCE_DIR}/src/ventilation_embedded_data.h
 )
 add_library(optima-poultry-climate-control INTERFACE)
 target_include_directories(optima-poultry-climate-control INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/src)
-clang-format(optima-poultry-climate-control ${SOURCES})
+clang_format(optima-poultry-climate-control ${SOURCES})
 
 # Configure install targets
 include(GNUInstallDirs)
