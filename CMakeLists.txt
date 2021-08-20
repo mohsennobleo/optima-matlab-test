@@ -33,8 +33,8 @@ set(SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded_data.cpp    
 )
 
-add_library(${TARGET} INTERFACE ${SOURCES})
-target_include_directories(${TARGET} INTERFACE ${SOURCES})
+add_library(${TARGET} STATIC ${SOURCES})
+# target_include_directories(${TARGET} INTERFACE ${SOURCES})
 clang_format(${TARGET} ${SOURCES})
 
 # Configure install targets
