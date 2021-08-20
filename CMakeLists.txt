@@ -35,7 +35,7 @@ set(SOURCES
 )
 
 # Test files
-file(GLOB TXT_TEST_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/tests "*.txt")
+file(GLOB TXT_TEST_FILES "tests/*.txt")
 
 # Code formatting
 include(clang-format)
