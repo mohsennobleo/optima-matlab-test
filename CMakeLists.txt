@@ -52,7 +52,7 @@ clang_format(${TARGET} ${SOURCES})
 #     FILES_MATCHING PATTERN "*.a"
 # )
 install(FILES ${SOURCES} DESTINATION include/${TARGET})
-# install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib${TARGET}.a DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib${TARGET}.a DESTINATION lib)
 
 
 # cmake_minimum_required(VERSION 3.10)
