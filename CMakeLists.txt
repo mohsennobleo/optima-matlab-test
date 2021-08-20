@@ -22,20 +22,23 @@ link_directories(${EXTERNAL_INSTALL_DIR}/lib)
 
 # Files
 set(SOURCES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/rtwtypes.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/solver_zc.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/zero_crossing_types.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded_data.cpp    
 )
 
+set(HEADERS
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/rtwtypes.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/solver_zc.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/zero_crossing_types.h
+)
+
 # Code formatting
 include(clang-format)
-clang_format(${TARGET} ${SOURCES})
+clang_format(${TARGET} ${SOURCES} ${HEADERS})
 
 # Library
-add_library(${TARGET} STATIC ${SOURCES})
+add_library(${TARGET} STATIC ${HEADERS} ${SOURCES})
 
 # Install
 install(FILES ${SOURCES} DESTINATION include/${TARGET})
