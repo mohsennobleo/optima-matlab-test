@@ -31,7 +31,7 @@ set(SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded_data.cpp    
 )
-find_file(${CMAKE_CURRENT_SOURCE_DIR}/tests TXT_TEST_FILES "*.txt")
+find(GLOB TXT_TEST_FILES "*.txt")
 
 # Code formatting
 include(clang-format)
