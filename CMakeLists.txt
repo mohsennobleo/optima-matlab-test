@@ -42,5 +42,5 @@ add_library(${TARGET} STATIC ${HEADERS} ${SOURCES})
 
 # Install
 install(FILES ${HEADERS} DESTINATION include/${TARGET})
-install(FILES ${TXT_TEST_FILES} DESTINATION include/${TARGET})
+install(FILES ${TXT_TEST_FILES} DESTINATION include/${TARGET}/tests)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib${TARGET}.a DESTINATION lib)
