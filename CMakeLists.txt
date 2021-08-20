@@ -41,5 +41,5 @@ clang_format(${TARGET} ${SOURCES} ${HEADERS})
 add_library(${TARGET} STATIC ${HEADERS} ${SOURCES})
 
 # Install
-install(FILES ${SOURCES} DESTINATION include/${TARGET})
+install(FILES ${HEADERS} DESTINATION include/${TARGET})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib${TARGET}.a DESTINATION lib)
