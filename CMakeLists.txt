@@ -23,59 +23,19 @@ link_directories(${EXTERNAL_INSTALL_DIR}/lib)
 # Code formatting
 include(clang-format)
 
-# Code coverage generation
-if(ENABLE_CODE_COVERAGE)
-    include(code-coverage)
-    append_coverage_compiler_flags()
-endif()
-
-# Static code analysis
-if(ENABLE_CODE_ANALYSIS)
-    if (ENABLE_CPPCHECK)
-        message(STATUS "Attempting to find code analysis tools:")
-        find_program(CMAKE_CXX_CPPCHECK NAMES cppcheck)
-        if(CMAKE_CXX_CPPCHECK)
-            message(STATUS "- Found `cppcheck`")
-            list(APPEND CMAKE_CXX_CPPCHECK
-                "--enable=all"
-                "--suppress=missingIncludeSystem"
-                "--inline-suppr"
-                "--force"
-                "--suppressions-list=${CMAKE_SOURCE_DIR}/.cppcheck-suppressions"
-            )
-        endif()
-    endif()
-
-    if (ENABLE_CLANG_TIDY)
-        find_program(CMAKE_CXX_CLANG_TIDY NAMES clang-tidy)
-        if(CMAKE_CXX_CPPCHECK)
-            message(STATUS "- Found `clang-tidy`")
-            list(APPEND CMAKE_CXX_CLANG_TIDY
-                "-header-filter=${CMAKE_SOURCE_DIR}/include"
-                "-checks=*"
-            )
-        endif()
-    endif()
-endif()
-
-
-
-set(INCLUDE_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/include)
-
 # Library
 set(SOURCES
-    ${INCLUDE_PREFIX}/rtwtypes.h
-    ${INCLUDE_PREFIX}/solver_zc.h
-    ${INCLUDE_PREFIX}/ventilation_embedded.h
-    ${INCLUDE_PREFIX}/zero_crossing_types.h
-    ${INCLUDE_PREFIX}/ventilation_embedded.cpp
-    ${INCLUDE_PREFIX}/ventilation_embedded_data.cpp    
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/rtwtypes.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/solver_zc.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/zero_crossing_types.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/ventilation_embedded_data.cpp    
 )
 
 add_library(${TARGET} INTERFACE ${SOURCES})
-# target_include_directories(${TARGET} STATIC ${HEADERS})
-# clang_format(${TARGET} ${HEADERS})
-# clang_format(${TARGET} ${SOURCES})
+target_include_directories(${TARGET} INTERFACE ${SOURCES})
+clang_format(${TARGET} ${SOURCES})
 
 # Configure install targets
 # include(GNUInstallDirs)
