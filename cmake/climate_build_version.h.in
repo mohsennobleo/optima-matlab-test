@@ -1,0 +1,6 @@
+#pragma once
+
+namespace NS_FANCOM {
+    inline constexpr auto climate_control_commit_hash = "@OPTIMA_COMMIT_HASH@";
+    inline constexpr auto climate_control_build_timestamp = "@OPTIMA_BUILD_TIMESTAMP@";
+}
